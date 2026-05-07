@@ -19,3 +19,12 @@ sorted_merge [13, "X"]
 
 dataIncome <- tapply(data_merge$X.1, data_merge$Income.Group, mean, na.rm = TRUE)
 dataIncome
+
+##       Question 3
+
+GDP5 <- cut (data_merge$X.1, breaks = 5)
+table (GDP5, data_merge$Income.Group)
+## 189/5 = 38, the table alone is enough to find the answer. However, the
+## following code make it more direct
+top38 <- data_merge [data_merge$X.1 <= 38, ]
+sum (top38$Income.Group == "Lower middle income")
