@@ -14,3 +14,8 @@ nrow(data_merge)
 
 sorted_merge <- data_merge [order (data_merge$X.1, decreasing = TRUE), ]
 sorted_merge [13, "X"]
+
+##       Question 2
+
+dataIncome <- tapply(data_merge$X.1, data_merge$Income.Group, mean, na.rm = TRUE)
+dataIncome
