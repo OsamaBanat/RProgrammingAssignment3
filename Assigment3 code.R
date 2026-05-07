@@ -28,3 +28,18 @@ table (GDP5, data_merge$Income.Group)
 ## following code make it more direct
 top38 <- data_merge [data_merge$X.1 <= 38, ]
 sum (top38$Income.Group == "Lower middle income")
+
+##       Question 4
+
+data_GDP <- read.csv ("getdata_data_GDP.csv", skip = 4, stringsAsFactors = FALSE)
+data_GDP$X.4 <- gsub(",", "", data_GDP$X.4)
+data_GDP$X.4 <- as.numeric(data_GDP$X.4)
+mean(data_GDP$X.4[1:195], na.rm =TRUE)
+
+##       Question 5
+
+grep("^United",data_GDP$X.3)
+
+##       Question 6
+jun <- grep("june", data_merge$Special.Notes, ignore.case = T)
+length (jun)
