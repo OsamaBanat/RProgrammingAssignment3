@@ -42,4 +42,4 @@ grep("^United",data_GDP$X.3)
 
 ##       Question 6
 jun <- grep("june", data_merge$Special.Notes, ignore.case = T)
-length (jun)
+length (jun) 
